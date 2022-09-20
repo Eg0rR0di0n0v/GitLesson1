@@ -14,4 +14,27 @@ public class SalesManager {
         }
         return max;
     }
+
+    public int min() {
+        int min = max();
+        for (int sale : sales) {
+            if (sale < min) {
+                min = sale;
+            }
+        }
+        return min;
+    }
+
+    public int stat(){
+        int stat = 0;
+        int i = 0;
+        for (int sale : sales){
+            if (min()!= sale && sale != max()) {
+                stat += sale;
+                i++;
+            }
+        }
+        System.out.println(i);
+        return (stat/i);
+    }
 }
