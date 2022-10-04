@@ -25,16 +25,27 @@ public class SalesManager {
         return min;
     }
 
-    public long stat(){
+    public long stat() {
         int stat = 0;
         int i = 0;
-        for (long sale : sales){
-            if (min()!= sale && sale != max()) {
+        int n = 0;
+        int x = 0;
+        for (long sale : sales) {
+            //if (min() != sale $$ sale != max() ) {
+            //   stat += sale;
+            //   i++;
+            //}
+            if (min() == sale && n == 0) {
+                n++;
+            } else if (max() == sale && x == 0) {
+                x++;
+            } else {
                 stat += sale;
                 i++;
+                //System.out.println(sale);
             }
         }
-        System.out.println(i);
-        return (stat/i);
+        //System.out.println(i);
+        return (stat / i);
     }
 }
